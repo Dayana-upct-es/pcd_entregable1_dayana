@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>5</zoom_level>
+  <zoom_level>4</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>140</x>
-      <y>250</y>
-      <w>100</w>
-      <h>70</h>
+      <x>152</x>
+      <y>264</y>
+      <w>80</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>PERSONA
 bg=pink
@@ -23,10 +23,10 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>595</x>
-      <y>385</y>
-      <w>120</w>
-      <h>70</h>
+      <x>516</x>
+      <y>372</y>
+      <w>96</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>P.ASOCIADO
 bg=pink
@@ -39,26 +39,26 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>395</x>
-      <y>385</y>
-      <w>120</w>
-      <h>70</h>
+      <x>356</x>
+      <y>372</y>
+      <w>96</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>P.TITULAR
 bg=pink
 --
 +area_investigacion: String
 --
-+Cambiar_areaINV()</panel_attributes>
++Cambiar_areaINV(nuevo_area)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>220</x>
-      <y>385</y>
-      <w>100</w>
-      <h>70</h>
+      <x>216</x>
+      <y>372</y>
+      <w>80</w>
+      <h>52</h>
     </coordinates>
     <panel_attributes>ASIGNATURA
 bg=pink
@@ -73,9 +73,9 @@ bg=pink
     <id>UMLClass</id>
     <coordinates>
       <x>60</x>
-      <y>380</y>
-      <w>80</w>
-      <h>70</h>
+      <y>368</y>
+      <w>100</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>ESTUDIANTE
 bg=pink
@@ -83,19 +83,19 @@ bg=pink
 +curso: int
 +creditos: int
 +num_expediente: int
-+asignaturas: String[]
++asignaturas: list
 --
-+matricular_asignatura()
-+eliminar_aprobadas()</panel_attributes>
++matricular_asignaturas(asignaturas)
++aprobar_asignatura(asignaturas)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
-      <y>190</y>
-      <w>135</w>
-      <h>80</h>
+      <x>280</x>
+      <y>216</y>
+      <w>108</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>PROFESOR
 bg=pink
@@ -112,10 +112,10 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>550</x>
-      <y>210</y>
-      <w>105</w>
-      <h>45</h>
+      <x>480</x>
+      <y>232</y>
+      <w>84</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>DEPARTAMENTO
 bg=pink
@@ -129,23 +129,23 @@ bg=pink
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>135</x>
-      <y>415</y>
-      <w>95</w>
-      <h>20</h>
+      <x>156</x>
+      <y>396</y>
+      <w>68</w>
+      <h>16</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1..n
 m2=1..m</panel_attributes>
-    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>315</x>
-      <y>265</y>
-      <w>50</w>
-      <h>170</h>
+      <x>292</x>
+      <y>276</y>
+      <w>40</w>
+      <h>136</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1..n
@@ -155,21 +155,21 @@ m2=1..m</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>105</x>
-      <y>315</y>
-      <w>85</w>
-      <h>75</h>
+      <x>96</x>
+      <y>316</y>
+      <w>96</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>150.0;10.0;10.0;130.0</additional_attributes>
+    <additional_attributes>220.0;10.0;10.0;130.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>235</x>
-      <y>235</y>
-      <w>75</w>
-      <h>65</h>
+      <x>228</x>
+      <y>252</y>
+      <w>60</w>
+      <h>52</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;110.0;130.0;10.0</additional_attributes>
@@ -177,10 +177,10 @@ m2=1..m</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>265</y>
-      <w>45</w>
-      <h>165</h>
+      <x>328</x>
+      <y>276</y>
+      <w>36</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;310.0;70.0;310.0</additional_attributes>
@@ -188,10 +188,10 @@ m2=1..m</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>370</x>
-      <y>265</y>
-      <w>265</w>
-      <h>130</h>
+      <x>336</x>
+      <y>276</y>
+      <w>212</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0;510.0;110.0;510.0;240.0</additional_attributes>
@@ -199,10 +199,10 @@ m2=1..m</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>430</x>
-      <y>225</y>
-      <w>130</w>
-      <h>25</h>
+      <x>384</x>
+      <y>244</y>
+      <w>104</w>
+      <h>20</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1..n
@@ -213,10 +213,10 @@ m2=1
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>705</x>
-      <y>210</y>
-      <w>60</w>
-      <h>45</h>
+      <x>604</x>
+      <y>232</y>
+      <w>48</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>E_DEP
 bg=pink
@@ -229,10 +229,10 @@ DIS</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>650</x>
-      <y>225</y>
-      <w>65</w>
-      <h>25</h>
+      <x>560</x>
+      <y>244</y>
+      <w>52</w>
+      <h>20</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -241,33 +241,36 @@ DIS</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>130</y>
-      <w>105</w>
-      <h>95</h>
+      <x>40</x>
+      <y>152</y>
+      <w>84</w>
+      <h>96</h>
     </coordinates>
-    <panel_attributes>Universidad
+    <panel_attributes>UNIVERSIDAD
 bg=pink
 --
 +lista_alumnos: list
 +lista_profesores: list
++lista_asignaturas: list
 --
-
-+matricular_alumno()
-+contratar_profesor()
-+DarBaja_alumno()
-+graduar_alumno()
-+despedir_profesor()
-+jubilar_profesor()</panel_attributes>
++añadir_asignatura(Asignatura)
++matricular_alumno(alumno)
++contratar_profesor(profesor)
++DarBaja_alumno(alumno)
++graduar_alumno(alumno)
++despedir_profesor(profesor)
++jubilar_profesor(profesor)
++actualizar_profesor(profesor)
++actualizar_alumno(alumno)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>100</x>
-      <y>170</y>
-      <w>210</w>
-      <h>65</h>
+      <x>120</x>
+      <y>200</y>
+      <w>168</w>
+      <h>52</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1..n
@@ -277,14 +280,14 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>30</x>
-      <y>220</y>
-      <w>45</w>
-      <h>170</h>
+      <x>64</x>
+      <y>244</y>
+      <w>20</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1..n
 m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;70.0;320.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;310.0</additional_attributes>
   </element>
 </diagram>
