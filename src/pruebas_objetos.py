@@ -1,18 +1,20 @@
 # Importo todas las clases desde el archivo sistema_universidad
 from sistema_universidad import *
 
-'''Creación de objetos'''
-#PRIMERA CREACIÓN ANTES DE AÑADIR LOS MÉTODOS CORRESPONDIENTES A CADA CLASE
+'''Creación de objetos individuales'''
+import random
 
-# Creacion de objetos Persona:
+def generar_dni():
+    numeros = ''.join(random.choices('0123456789', k=8))
+    letras = random.choice('TRWAGMYFPDXBNJZSQVHLCKE')
+    return str(numeros + letras)
+
+# Creacion de objeto Persona:
 '''Esta clase no es necesaria de usarla como ejemplo para el caso de los estudiantes y profesores
 sin mebargo, se puede usar como una clase base de personas con otros oficios dentro de la universidad, aunque
 yo sólo la utilizaré para caso de profesores y estudiantes. '''
 
-persona1 = Persona('Juan', '23303508H', 'calle Greco, Nº 4, ciudad5', 'H')
-persona2 = Persona('Teresa', '23302408L', 'calle Luco, nº 3, ciudad7', 'M')
-persona3 = Persona('Pablo', '23309008B', 'calle Polo, nº 47, ciudad9', 'H')
-persona4 = Persona('Juan', '23309938I', 'calle Azul, nº 12, ciudad23', 'M')
+persona1 = Persona('Juan', '23303508T', 'calle Greco, Nº 4, ciudad5', 'H')
 print(persona1)
 
 # Creación de objetos Profesor:
@@ -24,102 +26,53 @@ Por ejemplo, se puede tener profesores visitantes, profesores adjuntos, etc.
 Por ello, si tiene sentido tener una clase base Profesor de la cual puedan heredar los diferentes
 tipos de profesores, como ProfesorTitular, ProfesorAsociado u otros no mencionados en el documento'''
 
-profesor1 = Profesor(['Matematicas II', 'Deep Learning', 'Base de datos I'],
-                    18, EDep.DIIC,
+profesor1 = Profesor(
                     'Raúl López' ,
-                    '28477654V',
+                    '23303508T',
                     'Calle Puerto nº 2, Ciudad4',
                     'H')
 
-profesor2 = Profesor(['Matematicas I', 'Deep Learning', 'Base de datos II'],
-                    18,
-                    EDep.DIIC,
-                    'David Pérez' ,
-                    '28477394T',
-                    'Calle Venus nº 21, Ciudad3',
-                    'H')
-
-profesor3 = Profesor(['Calculo II', 'Teoría  de la Señal', 'Algebra'],
-                    18,
-                    EDep.DIIC,
-                    'Isabel Díaz' ,
-                    '28777394H',
-                    'Calle Lagos nº 44, Ciudad 43',
-                    'M')
 print(profesor1)
 
 # Creación de objeto Profesor Titular:
 profesor_titular1 = ProfesorTitular(
     area_investigacion="Física",
-    asignaturas=["Matematicas II", "Mecánica"],
-    creditos=12,
-    departamento=EDep.DIS,
     nombre="María Rodríguez",
-    DNI="87654321B",
+    DNI="23303508T",
     direccion="Calle BM, Ciudad 1",
-    sexo="F")
-
-print("Profesor Titular:")
-print("Nombre:", profesor_titular1.nombre)
-print("Departamento:", profesor_titular1.departamento)
-print("Área de Investigación:", profesor_titular1.area_investigacion)
-print("Asignaturas:", profesor_titular1.asignaturas)
-print("Créditos:", profesor_titular1.creditos)
-print("DNI:", profesor_titular1.DNI)
-print("Dirección:", profesor_titular1.direccion)
-print("Sexo:", profesor_titular1.sexo)
+    sexo="M")
+print(profesor_titular1)
 
 # Creación de objeto Profesor Asociado:
 profesor_asociado1 = ProfesorAsociado(
     trabajo_externo="Diseñador de software",
-    asignaturas=["Diseño de Algortimos", "Base de Datos I" ],
-    creditos=15,
-    departamento=EDep.DITEC,
     nombre="Pedro González",
-    DNI="56789123C",
+    DNI='23303508T',
     direccion="Calle C, Ciudad44",
-    sexo="M")
+    sexo="H")
 
-print("Profesor Asociado:")
-print("Nombre:", profesor_asociado1.nombre)
-print("Departamento:", profesor_asociado1.departamento)
-print("Trabajo Externo:", profesor_asociado1.trabajo_externo)
-print("Asignaturas:", profesor_asociado1.asignaturas)
-print("Créditos:", profesor_asociado1.creditos)
-print("DNI:", profesor_asociado1.DNI)
-print("Dirección:", profesor_asociado1.direccion)
-print("Sexo:", profesor_asociado1.sexo)
+print(profesor_asociado1)
 
 # Creación de objetos Asignatura:
-asignatura1 = Asignatura(nombre="Matemáticas I", creditos=6)
-asignatura2 = Asignatura(nombre="Matemáticas II", creditos=6)
-asignatura3 = Asignatura(nombre="Computadores", creditos=6)
+asignatura1 = Asignatura(nombre="Matemáticas I", codigo=1234, creditos=6)
+asignatura2 = Asignatura(nombre="Matemáticas II", codigo=2345, creditos=6)
+asignatura3 = Asignatura(nombre="Computadores", codigo=4567, creditos=6)
+
+print(asignatura1)
 
 # Creación de objetos Estudiante:
 '''Aclaración con respecto a la creación de asignatura:
-    Al haber creado los objetos asignaturas lso utilizo directamente para
+    Al haber creado los objetos asignaturas los utilizo directamente para
     la creación del objeto estudiante
 '''
 estudiante1 = Estudiante(
-    curso="Segundo",
-    creditos=40,
-    num_expediente="123456",
-    asignaturas=[asignatura1.nombre, asignatura2.nombre],
+    curso=2,
     nombre="Laura López",
-    DNI="98799432X",
+    DNI="23303508T",
     direccion="Calle D, Ciudad",
-    sexo="F"
-)
+    sexo="M")
 
-print("\nEstudiante:")
-print("Nombre:", estudiante1.nombre)
-print("Curso:", estudiante1.curso)
-print("Créditos:", estudiante1.creditos)
-print("Número de Expediente:", estudiante1.num_expediente)
-print("Asignaturas:", estudiante1.asignaturas)
-print("DNI:", estudiante1.DNI)
-print("Dirección:", estudiante1.direccion)
-print("Sexo:", estudiante1.sexo)
+print(estudiante1)
 
 
 # Creación de objetos Departamento:
@@ -127,11 +80,6 @@ departamento1 = Departamento(nombre_dep=EDep.DIIC)
 departamento2 = Departamento(nombre_dep=EDep.DITEC)
 departamento3 = Departamento(nombre_dep=EDep.DIS)
 
-#departamento1.profesores.add(profesor1)
-departamento1.profesores.add(profesor2)
-
-#departamento2.profesores.add(profesor3)
-departamento2.profesores.add(profesor_asociado1)
 print(departamento1)
 print(departamento2)
 
@@ -140,8 +88,64 @@ print(departamento2)
 '''Esta clase está hecha para facilitar las funcionalidades en cuanto a la
  administracion de las personas de la universidad correspondiente'''
 
-
 universidad_upct = Universidad()
-universidad_upct.matricular_alumno(estudiante1)
-print(len(universidad_upct.listado_alumnos))
-universidad_upct.contratar_profesor(profesor1)
+
+
+'''Uso de métodos de las clases'''
+# comenzamos por la clase Universidad:
+
+universidad_upct.añadir_asignatura("Matemáticas", 2344, 6)
+universidad_upct.añadir_asignatura("Base de Datos", 2364, 6)
+
+universidad_upct.matricular_alumno(1, 'Laura', '23303508T', 'Calle 2033', 'M')
+
+universidad_upct.contratar_profesor('Paco', '23303508T', 'calle azul', 'H', True)
+
+print(universidad_upct.obtener_alumno('23303508T'))
+print(universidad_upct.obtener_profesor('23303508T'))
+
+universidad_upct.DarBaja_alumno(1, 'Laura', '23303500T', 'Calle 2033', 'M')
+universidad_upct.graduar_alumno(1, 'Laura', '23303508T', 'Calle 2033', 'M')
+
+universidad_upct.despedir_profesor('Paco', '23303508T', 'calle azul', 'H', True)
+universidad_upct.jubilar_profesor('Paco', '23303508T', 'calle azul', 'H', True)
+
+
+universidad_upct.matricular_alumno(1, 'Laura', '23303508T', 'Calle 2033', 'M')
+
+universidad_upct.contratar_profesor('Paco', '23303508T', 'calle azul', 'H', True)
+
+universidad_upct.actualizar_datos_profesor("23303508T", nombre="Pedro Rodríguez", direccion="Avenida 456")
+
+universidad_upct.actualizar_datos_estudiante("23303508T", nombre="María Gómez")
+
+# Métodos de la clase Persona:
+# El más importante es el metodo validar identidad ya que un DNI es único e imprescindible para una persona
+# Además también se considera el NIE
+persona= Persona('dana', 'X6523796F', 'Calle 2nef', 'M')
+
+'DNI no válido salta excepción:'
+#persona = Persona('Brandon', '23858338H', 'Calle azul', 'H')
+
+# Métodos clase Profesor(Titular o Asociado):
+'VOy a añadir una asignatura al profesor creado antes:'
+profesor_titular1.asignar_asignatura(asignatura2)
+profesor_asociado1.asignar_asignatura(asignatura1)
+print(22222222222222222222222222)
+profesor_titular1.cambiar_areaIVN = 'FLORA'
+profesor_titular1.asignar_departamento(EDep.DIIC)
+print(profesor_titular1.departamento)
+print(profesor_titular1)
+print(profesor_asociado1)
+
+
+# Metodos clase Estudiante
+estudiante2 = Estudiante(
+    curso="Primero",
+    nombre="Manuel Núñez",
+    DNI="23303508T",
+    direccion="Calle p, Ciudad22",
+    sexo="H")
+estudiante2.matricular_asignaturas(asignatura1)
+estudiante2.aprobar_asignatura(asignatura1) #se debe de sumar 6 por laasignatura aprobada
+print(estudiante2)
